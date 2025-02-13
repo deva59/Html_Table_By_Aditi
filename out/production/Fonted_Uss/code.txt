@@ -1,0 +1,39 @@
+import java.util.Random;
+
+import javax.sound.sampled.SourceDataLine;
+
+import java.util.*;
+
+public class PasswordGenrate {
+
+    
+    public static void main(String[] args) {
+
+        int length=10;
+        System.out.println(geek_Password(length));
+    }
+
+    static char[] geek_Password(int len){
+        System.out.println("Genrating password using random(): ");
+        System.out.println("Your Password is: ");
+        String Capital="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String LowerCase="abcdefghijklmnopqrstuvwxyz";
+        String Charracters="!@#$%^&*()<>?/._-=+*~";
+        String number ="0123456789";
+        String Combine = Capital+LowerCase+Charracters+number;
+        
+
+        Random random = new Random();
+        char[] password = new char[len];
+
+
+        for(int i=0; i<len; i++){
+            password [i]=Combine.charAt(random.nextInt(Combine.length()));
+        }
+
+        return password;
+
+
+
+    }
+}
